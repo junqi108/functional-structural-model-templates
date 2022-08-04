@@ -8,10 +8,10 @@
   <ref name="project">
    <ref name="objects">
     <ref name="files">
-     <de.grogra.pf.ui.registry.SourceFile mimeType="text/x-grogra-rgg" name="pfs:Model.rgg"/>
+     <de.grogra.pf.ui.registry.SourceFile mimeType="text/x-grogra-rgg" name="pfs:main.rgg"/>
     </ref>
     <ref name="meta">
-     <de.grogra.pf.registry.NodeReference name="Model" ref="2"/>
+     <de.grogra.pf.registry.NodeReference name="main" ref="6"/>
     </ref>
    </ref>
   </ref>
@@ -40,10 +40,10 @@
        <de.grogra.pf.ui.registry.Split location="0.82631576" orientation="0">
         <de.grogra.pf.ui.registry.Tab selectedIndex="0">
          <de.grogra.pf.ui.registry.PanelFactory source="/ui/panels/texteditor">
-          <de.grogra.pf.registry.Option name="documents" type="java.lang.String" value="&quot;\&quot;pfs:Model.rgg\&quot;&quot;"/>
+          <de.grogra.pf.registry.Option name="documents" type="java.lang.String" value="&quot;\&quot;pfs:main.rgg\&quot;&quot;"/>
           <de.grogra.pf.registry.Option name="panelId" type="java.lang.String" value="/ui/panels/texteditor"/>
-          <de.grogra.pf.registry.Option name="panelTitle" type="java.lang.String" value="jEdit - Model.rgg"/>
-          <de.grogra.pf.registry.Option name="selected" type="java.lang.String" value="pfs:Model.rgg"/>
+          <de.grogra.pf.registry.Option name="panelTitle" type="java.lang.String" value="jEdit - main.rgg"/>
+          <de.grogra.pf.registry.Option name="selected" type="java.lang.String" value="pfs:main.rgg"/>
          </de.grogra.pf.ui.registry.PanelFactory>
          <de.grogra.pf.registry.Link source="/ui/panels/attributeeditor"/>
         </de.grogra.pf.ui.registry.Tab>

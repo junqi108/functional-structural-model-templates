@@ -1,5 +1,5 @@
 
-Name: Model.rgg
+Name: main.rgg
 Content-Type: text/x-grogra-rgg; charset=UTF-8
 
 Name: model.gs
