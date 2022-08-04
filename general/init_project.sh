@@ -19,6 +19,11 @@ if files=$(ls -qAH -- src) && [ -z "$files" ]; then
    cp -r templates/src/* src
 fi
 
+if files=$(ls -qAH -- utils) && [ -z "$files" ]; then
+   echo "Initialising utility files"
+   cp -r templates/utils/* utils
+fi
+
 if [ ! -d templates ]; then
    echo "Creating 'templates' directory"
    git submodule add -f https://github.com/PlantandFoodResearch/functional-structural-model-templates templates
@@ -56,5 +61,11 @@ done
 
 echo "Updating init_project.sh"
 cp templates/general/init_project.sh .
+
+if [ ! -d .git ]; then
+   git init
+   git add .
+   git commit -m "Initial commit"
+fi
 
 echo Done
