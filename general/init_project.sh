@@ -14,6 +14,11 @@ do
    fi
 done
 
+if files=$(ls -qAH -- src) && [ -z "$files" ]; then
+   echo "Initialising GroIMP project"
+   cp -r templates/src/* src
+fi
+
 if [ ! -d templates ]; then
    echo "Creating 'templates' directory"
    git submodule add -f https://github.com/PlantandFoodResearch/functional-structural-model-templates templates
