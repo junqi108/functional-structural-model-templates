@@ -4,17 +4,17 @@
 # Main
 ###################################################################
 
-[ -d docs ] && rm -rf docs 
+# [ -d docs ] && rm -rf docs 
 
-mkdir -p docs 
-cp -r ../../* docs
-cd docs
+# mkdir -p docs 
+# cp -r ../../* docs
+# cd docs
 
-find . -type f -name "*.rgg" -print0 | xargs -0 sed -i "s/module/class/g"
-doxygen
+# find . -type f -name "*.rgg" -print0 | xargs -0 sed -i "s/module/class/g"
+# doxygen
 
-rm *.rgg
+# rm *.rgg
 
-echo; echo "Open $(pwd)/html/index.html"
+# echo; echo "Open $(pwd)/html/index.html"
 
-cd ..
+# cd ..
