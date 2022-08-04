@@ -1,14 +1,49 @@
-module A(float len) extends Sphere(0.1)
+/**  
+ * The base module for all organs.
+ * 
+ * @author  James Bristow
+ * @version 1.0
+ * @since   04-08-2022 
+ */
+abstract module Organ(float len) extends Sphere(0.1)
 {
 	{setShader(GREEN);}
 }
 
+/**  
+ * The bud organ.
+ * 
+ * @author  James Bristow
+ * @version 1.0
+ * @since   04-08-2022 
+ */
+module Bud extends Organ(0.1) {
+
+	protected int ID;
+
+	/**
+	 * Gets a plant ID value.
+	 * 
+	 * @return The organ ID.
+	 */
+	public int getID() { 
+		return ID;
+	}
+}
+
+/**
+ * Initialise the model.
+ * 
+ */
 protected void init ()
 [
-	Axiom ==> A(1);
+	Axiom ==> Bud;
 ]
 
+/**
+ * Runs each time step of the simulation.
+ */
 public void run ()
 [
-	A(x) ==> F(x) [RU(30) RH(90) A(x*0.8)] [RU(-30) RH(90) A(x*0.8)];
+	Bud ==> F(0.5) [RU(30) RH(90) Bud] [RU(-30) RH(90) Bud];
 ]
