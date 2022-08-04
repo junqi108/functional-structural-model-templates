@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><graph xmlns:gx="http://grogra.de/xmlpersistence" xmlns="http://grogra.de/xmlpersistence">
+ <node root="MainGraph" id="0" type="de.grogra.graph.impl.Node">
+  <data gx:name="extentIndex" gx:value="7"/>
+  <node id="3" type="de.grogra.rgg.RGGRoot" edges="+">
+   <node id="5" type="Model$A" edges="-">
+    <data gx:name="radius" gx:value="0.1"/>
+    <data gx:name="len" gx:value="1.0"/>
+   </node>
+  </node>
+ </node>
+ <node root="MetaGraph" id="1" type="de.grogra.graph.impl.Node">
+  <data gx:name="extentIndex" gx:value="7"/>
+  <node id="2" type="Model" edges="+">
+   <data gx:name="extentIndex" gx:value="7"/>
+   <object gx:name="initialTurtleState" color="14" length="100.0" diameter="0.1" tropism="0.0" parameter="0.0" carbon="0.0" heartwood="0.0" internodeCount="0"/>
+  </node>
+ </node>
+</graph>

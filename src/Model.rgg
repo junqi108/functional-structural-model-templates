@@ -1,0 +1,14 @@
+module A(float len) extends Sphere(0.1)
+{
+	{setShader(GREEN);}
+}
+
+protected void init ()
+[
+	Axiom ==> A(1);
+]
+
+public void run ()
+[
+	A(x) ==> F(x) [RU(30) RH(90) A(x*0.8)] [RU(-30) RH(90) A(x*0.8)];
+]
