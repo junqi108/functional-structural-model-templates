@@ -1,0 +1,35 @@
+[?5/?11/?2019 1:02 PM] Eric Burgueño: 
+#better to use oracle java, some function produce runtime errors
+this is how I installed GroIMP:
+
+Bootstrap: dockerFrom: ubuntu:bionic%post  ## Download prerequisites  apt-get update  apt-get -y install default-jdk ocl-icd-opencl-dev wget    ## Install  cd /opt  wget http://ufgb966.forst.uni-goettingen.de/GroIMP/GroIMP-1.6-all.deb  
+
+# remove the current groimp version
+# apt-get remove groimp
+# install the new one
+apt-get install ./GroIMP-1.6-all.deb
+
+
+# dpkg -I GroIMP-1.6-all.deb
+
+clinfo
+
+msi
+
+find /path -type f \( -iname "*.doc" -o -iname "*.pdf" \) 
+
+As if you have bash 4.0++
+#!/bin/bash
+shopt -s globstar
+shopt -s nullglob
+for file in **/*.{pdf,doc}
+do
+  echo "$file"
+done
+
+which groimp
+where groimp
+
+find . -name data-shell
+
+strace -o foo.out ~/Apps/simutrans/simutrans
