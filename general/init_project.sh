@@ -60,4 +60,10 @@ do
    cp "$i" documents/installation
 done
 
+if [ ! -d .github ]; then
+   echo "Adding GitHub Actions workflows"
+   mkdir -p .github
+   cp -r templates/github/* .github
+fi
+
 echo Done
