@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><project xmlns="http://grogra.de/registry" graph="graph.xml">
- <import plugin="de.grogra.pf" version="1.6"/>
- <import plugin="de.grogra.math" version="1.6"/>
  <import plugin="de.grogra.rgg" version="1.6"/>
- <import plugin="de.grogra.imp" version="1.6"/>
  <import plugin="de.grogra.imp3d" version="1.6"/>
+ <import plugin="de.grogra.math" version="1.6"/>
+ <import plugin="de.grogra.imp" version="1.6"/>
+ <import plugin="de.grogra.pf" version="1.6"/>
  <registry>
   <ref name="project">
    <ref name="objects">
@@ -37,7 +37,7 @@
          <de.grogra.pf.registry.Link source="/ui/panels/statusbar"/>
         </de.grogra.pf.ui.registry.Split>
        </de.grogra.pf.ui.registry.Split>
-       <de.grogra.pf.ui.registry.Split location="0.57894737" orientation="0">
+       <de.grogra.pf.ui.registry.Split location="0.5776316" orientation="0">
         <de.grogra.pf.ui.registry.Tab selectedIndex="0">
          <de.grogra.pf.ui.registry.PanelFactory source="/ui/panels/texteditor">
           <de.grogra.pf.registry.Option name="documents" type="java.lang.String" value="&quot;\&quot;pfs:main.rgg\&quot;&quot;"/>

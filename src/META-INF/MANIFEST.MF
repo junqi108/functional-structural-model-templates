@@ -1,9 +1,9 @@
 
+Name: project.gs
+Content-Type: application/x-grogra-registry+xml
+
 Name: main.rgg
 Content-Type: text/x-grogra-rgg; charset=UTF-8
-
-Name: model.gs
-Content-Type: application/x-grogra-registry+xml
 
 Name: graph.xml
 Content-Type: application/x-grogra-graph+xml
