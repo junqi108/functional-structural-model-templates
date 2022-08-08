@@ -1,0 +1,17 @@
+# Container Management
+CONTAINER_REG_USER=junqi108
+
+# Linux
+DEBIAN_TAG=stable-20220711
+
+# Java
+JDK_VERSION=18.0.2
+JDK_PKG="https://download.oracle.com/java/18/archive/jdk-${JDK_VERSION}_linux-x64_bin.tar.gz"
+JDK_HOME=/usr/share/java/jdk-18
+JAVA_XMX=1500
+
+# GroIMP
+GROIMP_VERSION=1.6
+GROIMP_PKG="http://ufgb966.forst.uni-goettingen.de/GroIMP/GroIMP-${GROIMP_VERSION}-all.deb"
+GROIMP_DIR=/usr/share/GroIMP
+MODEL_NAME=project.gs

@@ -1,0 +1,30 @@
+# Groimp
+**/config.properties.txt
+**/*.gsz~
+
+# R
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# Python
+**/__pycache__/
+env/*
+
+# General
+.vscode/settings.json
+*.png
+**/*.db
+**/.env
+templates
+
+# Sphinx
+**/*_static
+**/*_templates
+**/source/api
+
+# Slurm
+**/*.sif
+**/slurm-*.out
+**/core.*
