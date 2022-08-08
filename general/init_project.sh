@@ -95,9 +95,12 @@ if [ ! -f .env ]; then
 fi
 
 if [ ! -f services/groimp/Dockerfile ]; then
-   echo "Adding Dockerfile file"
+   echo "Adding Dockerfile"
    mkdir -p services/groimp
    cp templates/docker/Dockerfile services/groimp/Dockerfile
 fi
+
+echo "Adding Docker.md documentation file"
+cp templates/docker/Docker.md documents/Docker.md
 
 echo Done
