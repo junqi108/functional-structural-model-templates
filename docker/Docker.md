@@ -34,7 +34,7 @@ Any distribution of Linux with a GUI can be used to launch the GroIMP GUI, as th
 
 # Environment
 
-Important information such as the Java JDK version, the GroIMP version, the Debian version, and the model name are contained within the [.env](.env) file. This file has been added to your [.gitignore](.gitignore) file, and should not be saved using git.
+Important information such as the Java JDK version, the GroIMP version, the Debian version, and the model name are contained within the [.env](../.env) file. This file has been added to your [.gitignore](../.gitignore) file, and should not be saved using git.
 
 Edit `CONTAINER_REG_USER` to change the owner of the Docker image on GitHub Container Registry.
 
@@ -42,7 +42,7 @@ The default user is [junqi108](https://github.com/junqi108).
 
 # Dockerfile
 
-[The Dockerfile contains the set of instructions needed to build the GroIMP image.](services/groimp/Dockerfile)
+[The Dockerfile contains the set of instructions needed to build the GroIMP image.](../services/groimp/Dockerfile)
 
 The steps executed within the Dockerfile are as follows:
 
@@ -54,7 +54,7 @@ The steps executed within the Dockerfile are as follows:
 
 # Docker-Compose
 
-[The docker-compose.yaml file contains service definitions for running Docker containers.](docker-compose.yaml).
+[The docker-compose.yaml file contains service definitions for running Docker containers.](../docker-compose.yaml).
 
 Currently, two definitions are provided: 
 
@@ -75,8 +75,8 @@ While we do not offer a dedicated script to build a Singularity image, it is pos
 
 Several convenience scripts are provided. 
 
-* [docker_pull.sh will pull the Docker image from the GitHub Container Registry.](docker_pull.sh) 
-* [groimp_build.sh will pull a Debian image from DockerHub. The GroIMP Docker image will then be built.](groimp_build.sh)
-* [groimp_headless_run.sh will execute GroIMP headlessly.](groimp_headless_run.sh)
-* [groimp_run.sh will run the GUI version of GroIMP.](groimp_run.sh)
-* [singularity_pull.sh will pull the Docker image from the GitHub Container Registry, and convert it to Singularity image.](singularity_pull.sh)
+* [docker_pull.sh will pull the Docker image from the GitHub Container Registry.](../docker_pull.sh) 
+* [groimp_build.sh will pull a Debian image from DockerHub. The GroIMP Docker image will then be built.](../groimp_build.sh)
+* [groimp_headless_run.sh will execute GroIMP headlessly.](../groimp_headless_run.sh)
+* [groimp_run.sh will run the GUI version of GroIMP.](../groimp_run.sh)
+* [singularity_pull.sh will pull the Docker image from the GitHub Container Registry, and convert it to Singularity image.](../singularity_pull.sh)
