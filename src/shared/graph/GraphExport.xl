@@ -1,0 +1,105 @@
+// Grogra
+import de.grogra.graph.impl.Node;
+import de.grogra.pf.io.FileWriterSource;
+import de.grogra.pf.io.FilterBase;
+import de.grogra.pf.io.FilterItem;
+import de.grogra.pf.io.FilterSource;
+import de.grogra.pf.ui.UI;
+import de.grogra.pf.ui.Workbench;
+import de.grogra.rgg.Library;
+import de.grogra.ext.exchangegraph.IOContext;
+import de.grogra.ext.exchangegraph.XEGExport;
+
+// Utils
+import java.util.Map;
+import java.util.HashMap;
+
+// Jackson
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+
+/**  
+ * The GroIMP graph exporter.
+ * 
+ * @author  James Bristow
+ * @version 1.0
+ * @since   12-08-2022 
+ */
+class GraphExport {
+	
+	/**
+	 * The map of GroIMP graphs.
+	 */
+	public Map graphHistory;
+	
+	/**
+	 * Get the current GroIMP graph.
+	 * 
+	 * @return The current GroIMP graph.
+	 */
+	public String getGraph() {
+		Node rootNode = UI.getRootOfProjectGraph(Workbench.current());
+		Node rggRoot = rootNode.getFirstEdge().getTarget();
+		Node lastRggRoot = (Node) de.grogra.rgg.Library.workbench().getProperty("lastRggRoot");
+		de.grogra.rgg.Library.workbench().setProperty("lastRggRoot", rggRoot);
+
+		IOContext ctx = (IOContext) de.grogra.rgg.Library.workbench().getProperty(IOContext.class.getName());
+
+		if (ctx == null || (ctx != null && !lastRggRoot.equals(rggRoot))){
+			System.err.println("pass into the condition to make a new context instance!!");
+			ctx= new IOContext();
+		}
+
+		XEGExport exporter = new XEGExport(rggRoot, ctx);
+		
+		String graphString = null;
+		try {
+			graphString = exporter.doExport();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return graphString;
+	}
+	
+	/**
+	 * Put the current GroIMP graph in the graph history map.
+	 * 
+	 * @param step The current time step.
+	 * @param graph The GroIMP graph.
+	 *
+	 */
+	public void put(int step, String graph) {
+		ObjectNode node = createNode();
+		node
+		.put("step", step)
+		.put("graph", graph);
+		
+		graphHistory.put(step, node);
+	}
+	
+	/**
+	 * Get the GroIMP graph from the graph history map.
+	 * 
+	 * @param step The queried time step.
+	 *
+	 * @return The GroIMP graph.
+	 */
+	public void get(int step) {
+		graphHistory.get(step);
+	}
+	
+	/**
+	 * Create a new object node.
+	 *
+	 * @return The object node.
+	 */
+	protected ObjectNode createNode() {
+		ObjectMapper mapper = new ObjectMapper();
+		return mapper.createObjectNode();
+	}
+	
+	public GraphExport() {
+		graphHistory = new HashMap();
+	}
+}

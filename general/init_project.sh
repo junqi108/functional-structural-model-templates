@@ -37,6 +37,14 @@ if files=$(ls -qAH -- src) && [ -z "$files" ]; then
    cp -r templates/src/* src
 fi
 
+if [ -d src/shared ]; then
+   rm -rf src/shared
+fi
+
+echo "Updating files in src/shared directory"
+mkdir -p src/shared
+cp -r templates/src/shared/* src/shared
+
 # Utils
 if files=$(ls -qAH -- utils) && [ -z "$files" ]; then
    echo "Initialising utility files"
