@@ -38,7 +38,7 @@ class GraphExport {
 	/**
 	 * The map of GroIMP graphs.
 	 */
-	public Map graphHistory;
+	protected Map graphHistory;
 	
 	/**
 	 * Get the current GroIMP graph.
