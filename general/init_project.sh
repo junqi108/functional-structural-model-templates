@@ -23,6 +23,9 @@ done
 if [ ! -d templates ]; then
    echo "Creating 'templates' directory"
    git submodule add -f https://github.com/PlantandFoodResearch/functional-structural-model-templates templates
+else
+   echo "Updating 'templates' directory"
+   cd templates && git pull origin main && cd ..
 fi
 
 # Gitignore
@@ -112,3 +115,5 @@ echo "Adding Docker.md documentation file"
 cp templates/docker/Docker.md documents/Docker.md
 
 echo Done
+
+cp templates/general/init_project.sh init_project.sh 
