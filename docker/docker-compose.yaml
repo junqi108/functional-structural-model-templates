@@ -34,19 +34,7 @@ services:
     network_mode: host
 
   groimp_headless:
-    image: "debian:${DEBIAN_TAG}"
-    build: 
-      dockerfile: services/groimp/Dockerfile
-      context: .
-      args:
-        DEBIAN_TAG: $DEBIAN_TAG
-        JDK_PKG: $JDK_PKG
-        JDK_HOME: $JDK_HOME
-        GROIMP_PKG: $GROIMP_PKG
-        GROIMP_VERSION: $GROIMP_VERSION
-        GROIMP_DIR: $GROIMP_DIR
-        JAVA_XMX: $JAVA_XMX
-        MODEL_NAME: $MODEL_NAME
+    image: "ghcr.io/${CONTAINER_REG_USER}/${CONTAINER_REG_NAME}:latest"
     environment:
       DEBIAN_TAG: $DEBIAN_TAG
       JDK_PKG: $JDK_PKG
