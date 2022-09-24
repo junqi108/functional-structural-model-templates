@@ -14,7 +14,7 @@ services:
       DISPLAY: $DISPLAY
     volumes:
       - .:/var/model
-      - .templates/ext/ext_linux:/usr/share/GroIMP/ext
+      - ./ext/ext_linux:/usr/share/GroIMP/ext
       - /tmp/.X11-unix:/tmp/.X11-unix
     command: java "-Xmx${JAVA_XMX}M" -jar "${GROIMP_DIR}/core.jar" --debug=INFO "/var/model/Scripts/${MODEL_NAME}"
     network_mode: host
@@ -30,7 +30,7 @@ services:
       MODEL_NAME: $MODEL_NAME
     volumes:
       - .:/var/model
-      - .templates/ext/ext_linux:/usr/share/GroIMP/ext
+      - ./ext/ext_linux:/usr/share/GroIMP/ext
     command: java "-Xmx${JAVA_XMX}M" -jar "${GROIMP_DIR}/core.jar" --headless --debug=INFO "/var/model/Scripts/${MODEL_NAME}"
 
   groimp_server:
@@ -49,7 +49,7 @@ services:
       - ${GROIMP_PORT}:6666
     volumes:
       - .:/var/model
-      - .templates/ext/ext_linux:/usr/share/GroIMP/ext
+      - ./ext/ext_linux:/usr/share/GroIMP/ext
     command: java -jar "${GROIMP_DIR}/core.jar" --headless -Xserver -Xhost=0.0.0.0 -Xport=6666 "-Xmx${JAVA_XMX}M" "/var/model/Scripts/${MODEL_NAME}"
     
 networks:
