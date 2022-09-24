@@ -96,7 +96,8 @@ class GraphExport {
 	 * @return The GroIMP graph.
 	 */
 	public ObjectNode get(int step) {
-		return graphHistory.get(step);
+		ObjectNode graph = (ObjectNode) graphHistory.get(step);
+		return graph;
 	}
 	
 	/**
