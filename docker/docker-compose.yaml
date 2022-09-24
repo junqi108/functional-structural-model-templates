@@ -23,7 +23,6 @@ services:
     image: "ghcr.io/${CONTAINER_REG_USER}/${CONTAINER_REG_NAME}:latest"
     environment:
       GROIMP_TAG: $GROIMP_TAG
-      JDK_PKG: $JDK_PKG
       JDK_HOME: $JDK_HOME
       GROIMP_VERSION: $GROIMP_VERSION
       GROIMP_DIR: $GROIMP_DIR
@@ -38,7 +37,6 @@ services:
     image: "ghcr.io/${CONTAINER_REG_USER}/${CONTAINER_REG_NAME}:latest"
     environment:
       GROIMP_TAG: $GROIMP_TAG
-      JDK_PKG: $JDK_PKG
       JDK_HOME: $JDK_HOME
       GROIMP_VERSION: $GROIMP_VERSION
       GROIMP_DIR: $GROIMP_DIR
