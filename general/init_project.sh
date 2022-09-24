@@ -92,7 +92,7 @@ if [ ! -d .github ]; then
 fi
 
 # Docker
-for i in docker_pull.sh docker-compose.yaml groimp_build.sh groimp_run.sh groimp_headless_run.sh singularity_pull.sh
+for i in docker-compose.yaml docker_build.sh singularity_pull.sh
 do
    if [ ! -f "$i" ]; then
       echo "Adding Docker-related file: ${i}"
@@ -103,12 +103,6 @@ done
 if [ ! -f .env ]; then
    echo "Adding .env file"
    cp templates/docker/env_example .env
-fi
-
-if [ ! -f services/groimp/Dockerfile ]; then
-   echo "Adding Dockerfile"
-   mkdir -p services/groimp
-   cp templates/docker/Dockerfile services/groimp/Dockerfile
 fi
 
 echo "Adding Docker.md documentation file"

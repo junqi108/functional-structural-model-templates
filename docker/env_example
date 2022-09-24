@@ -1,17 +1,28 @@
-# Container Management
-CONTAINER_REG_USER=junqi108
-
-# Linux
-DEBIAN_TAG=stable-20220711
+PROJECT_NAME=fspm
 
 # Java
-JDK_VERSION=18.0.2
-JDK_PKG="https://download.oracle.com/java/18/archive/jdk-${JDK_VERSION}_linux-x64_bin.tar.gz"
-JDK_HOME=/usr/share/java/jdk-18
+JDK_HOME=/usr/share/java/jdk-1.8
 JAVA_XMX=1500
 
 # GroIMP
+GROIMP_TAG=stable-20220711
 GROIMP_VERSION=1.6
-GROIMP_PKG="http://ufgb966.forst.uni-goettingen.de/GroIMP/GroIMP-${GROIMP_VERSION}-all.deb"
 GROIMP_DIR=/usr/share/GroIMP
 MODEL_NAME=project.gs
+GROIMP_HOST=127.0.0.1
+GROIMP_PORT=6666
+
+#Python
+PYTHON_TAG=3.7-slim-buster
+
+# GitHub
+CONTAINER_REG_USER=jbris
+CONTAINER_REG_NAME=groimp-docker
+
+### MLFlow ###
+MLFLOW_LOCAL_HOST=127.0.0.1
+MLFLOW_LOCAL_PORT=5000
+MLFLOW_TRACKING_URI="http://${MLFLOW_LOCAL_HOST}:${MLFLOW_LOCAL_PORT}" 
+MLFLOW_CONDA=--env-manager=local # Don't create a new conda environment when running an MLFlow project
+MLFLOW_BACKEND=local # Use local environment and storage for MLFlow server
+MLFLOW_BACKEND_STORE_URI=sqlite:///mlflow.db

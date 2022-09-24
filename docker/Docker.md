@@ -75,7 +75,6 @@ While we do not offer a dedicated script to build a Singularity image, it is pos
 
 Several convenience scripts are provided. 
 
-* [docker_pull.sh will pull the Docker image from the GitHub Container Registry.](../docker_pull.sh) 
 * [groimp_build.sh will pull a Debian image from DockerHub. The GroIMP Docker image will then be built.](../groimp_build.sh)
 * [groimp_headless_run.sh will execute GroIMP headlessly.](../groimp_headless_run.sh)
 * [groimp_run.sh will run the GUI version of GroIMP.](../groimp_run.sh)
