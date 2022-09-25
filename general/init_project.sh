@@ -9,7 +9,7 @@ if [ ! -d ".git" ]; then
    git init
 fi
 
-declare -a project_dirs=("documents" "docs" "inputs" "treatments" "src" "utils" "outputs")
+declare -a project_dirs=("documents" "docs" "inputs" "experiments" "treatments" "src" "utils" "outputs")
 
 # Create dirs
 for i in "${project_dirs[@]}"
@@ -67,7 +67,7 @@ if [ ! -f docs/index.html ]; then
 fi
 
 # README
-for i in documents inputs treatments src utils
+for i in documents inputs experiments treatments src utils
 do
    if [ ! -f "${i}/README.md" ]; then
       echo "Adding README.md to the ${i} directory"
