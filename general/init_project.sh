@@ -110,8 +110,8 @@ cp templates/docker/Docker.md documents/Docker.md
 
 # GroIMP
 echo "Adding GroIMP extensions"
-mkdir -p ext/ext_linux
-cp -r templates/ext/ext_linux/* ext/ext_linux
+mkdir -p ext
+cp -r templates/ext/* ext
 
 echo Done
 
