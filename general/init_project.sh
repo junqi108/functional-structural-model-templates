@@ -22,7 +22,7 @@ done
 
 if [ ! -d templates ]; then
    echo "Creating 'templates' directory"
-   git submodule add -f https://github.com/PlantandFoodResearch/functional-structural-model-templates templates
+   git submodule add -f https://github.com/junqi108/functional-structural-model-templates templates
 else
    echo "Updating 'templates' directory"
    cd templates && git pull origin main && cd ..
